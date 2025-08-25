@@ -17,14 +17,23 @@ To perform 8-bit arithmetic operations such as addition, subtraction, multiplica
 ### Program:
 
 LDA 4200H
+
 MOV B, A
+
 LDA 4210H
+
 ADD B
+
 STA 4300H
+
 JC STORE_CARRY
+
 HLT
+
 STORE_CARRY: MVI A, 01H
+
 STA 4301H
+
 HLT
 
 ### Output:
@@ -45,14 +54,23 @@ HLT
 ### Program:
 
 LDA 4200H
+
 MOV B,A
+
 LDA 4201H
+
 ADD B
+
 STA 4300H
+
 JC STORE_CARRY
+
 HLT
+
 STORE_CARRY:MVI A,01H
+
 STA 4301H
+
 HLT
 
 ### Output:
@@ -71,14 +89,23 @@ HLT
 ### Program:
 
 LDA 4200H
+
 MOV C,A
+
 LDA 4201H
+
 MOV B,A
+
 MVI A,00H
+
 LOOP:ADD C
+
 DCR B
+
 JNZ LOOP
+
 STA 4300H
+
 HLT
 
 ### Output:
@@ -97,21 +124,37 @@ HLT
 ### Program:
 
 LDA 4200H
+
 MOV C,A
+
 LDA 4201H
+
 MOV B,A
+
 MVI A,00H
+
 LOOP:ADD C
+
 CMP B
+
 JC END
+
 SUB B
+
 MOV C,A
+
 INR D
+
 JMP LOOP
+
 END: MOV A,D
+
 STA 4300H
+
 MOV A,C
+
 STA 4301H
+
 HLT
 
 ### Output:
